@@ -1,101 +1,274 @@
+import Header from "./components/ui/header/header";
 import Image from "next/image";
+import leftArrow from "@/public/home/left-arrow.png";
+import airmaxData from "@/app/data/home/airmax";
+import featured from "@/public/home/featured.png";
+import men1 from "@/public/home/men/men1.png";
+import men2 from "@/public/home/men/men2.png";
+import women1 from "@/public/home/women/women1.png";
+import women2 from "@/public/home/women/women2.png";
+import dontmiss from "@/public/home/dontmiss.png";
+import essential1 from "@/public/home/essentials/essential1.png";
+import essential2 from "@/public/home/essentials/essential2.png";
+import essential3 from "@/public/home/essentials/essential3.png";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      <Header />
+      <div className="flex w-full flex-col items-center sm:overflow-hidden">
+        <div className="mt-[84px] w-full max-w-[1440px] h-auto">
+          <div className="flex justify-between pl-12 pr-12 m-h-[52px] items-center">
+            <h3 className="font-medium text-xl">Best of Air Max</h3>
+            <div className="flex gap-3 items-center sm:hidden">
+              <h4 className="font-medium cursor-pointer hover:underline">
+                Shop
+              </h4>
+              <button className="flex justify-center items-center bg-gray-200 rounded-full w-12 h-12 hover:bg-gray-300 ">
+                <Image
+                  src={leftArrow}
+                  className="rotate-180 "
+                  alt="left arrow"
+                />
+              </button>
+              <button className="flex justify-center items-center bg-gray-200 rounded-full w-12 h-12 hover:bg-gray-300">
+                <Image src={leftArrow} alt="left arrow" />
+              </button>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="flex w-full justify-center pt-3">
+            <div className="flex max-w-[1440px] w-[calc(100vw-96px)] flex-wrap min-h-min sm:w-[95vw]">
+              {airmaxData.map((i) => (
+                <Link href={`/product/${i.id}`} className="w-1/3 sm:w-[95vw]">
+                  <div className="flex flex-col justify-start items-center">
+                    <div className="flex flex-col justify-center w-[95%]">
+                      <Image src={i.img} alt="airmax" />
+                      <div className="flex justify-between ">
+                        <h3 className="font-medium">{i.heading}</h3>
+                        <h3 className="font-medium">₹ {i.price}</h3>
+                      </div>
+                      <h3 className="font-normal text-gray-500">
+                        {i.category}
+                      </h3>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        {/* BANNER 1 */}
+        <div className="flex flex-col mt-[84px] max-w-[1440px] w-[calc(100vw-96px)] h-auto sm:w-[95vw]">
+          <h3 className="font-medium text-2xl">Featured</h3>
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            className="w-full pt-[25px]"
+            src={featured}
+            alt="featured image"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+          <div className="flex flex-col pt-[48px] items-center">
+            <h1 className="text-5xl font-medium sm:text-center">
+              STEP INTO WHAT FEELS GOOD
+            </h1>
+            <h2 className="text-base pt-6 sm:text-center">
+              Cause everyone should know the feeling of running in that perfect
+              pair.
+            </h2>
+            <Link href={'/all-products'}>
+            <button className="bg-black text-white h-10 w-[152px] rounded-[30px] mt-[30px]">
+              Find Your Shoe
+            </button>
+            </Link>
+          </div>
+        </div>
+
+        {/* MEN AND WOMEN SECTION */}
+        <div className="flex flex-col mt-[84px] max-w-[1440px] w-[calc(100vw-96px)] sm:w-[95vw] ">
+          <h3 className="font-medium text-2xl">Gear Up</h3>
+          <div className="flex pt-[25px] gap-3 sm:flex-col">
+            {/* MENS SECTION */}
+            <div className="flex flex-col items-end w-1/2 sm:w-[95vw]">
+              <div className="flex h-auto items-center gap-3 pr-[48px] ">
+                <h3 className="font-medium">Shop Men's</h3>
+                <button className="flex justify-center items-center bg-gray-200 rounded-full w-12 h-12 hover:bg-gray-300 sm:hidden">
+                  <Image
+                    src={leftArrow}
+                    className="rotate-180 "
+                    alt="left arrow"
+                  />
+                </button>
+                <button className="flex justify-center items-center bg-gray-200 rounded-full w-12 h-12 hover:bg-gray-300 sm:hidden">
+                  <Image src={leftArrow} alt="left arrow" />
+                </button>
+              </div>
+
+              <div className="flex gap-3 pt-3 sm:flex-col sm:w-[95vw] sm:items-center">
+                <div className="flex flex-col max-w-[300px] w-1/2 sm:w-[95vw]">
+                  <Image src={men1} alt="men1" />
+                  <div className="flex justify-between ">
+                    <h3 className="font-medium text-wrap ">
+                      Nike Dri-FIT ADV TechKnit Ultra
+                    </h3>
+                    <h3 className="font-medium">₹&nbsp;3,895</h3>
+                  </div>
+                  <h3 className="font-normal text-gray-500 text-wrap  w-[200px]">
+                    Men's Short-Sleeve Running Top
+                  </h3>
+                </div>
+                <div className="flex flex-col max-w-[300px] w-1/2 sm:w-[95vw]">
+                  <Image src={men2} alt="men1" />
+                  <div className="flex justify-between ">
+                    <h3 className="font-medium text-wrap">
+                      Nike Dri-FIT Challenger
+                    </h3>
+                    <h3 className="font-medium">₹&nbsp;2 495</h3>
+                  </div>
+                  <h3 className="font-normal text-gray-500 text-wrap w-[200px]">
+                    Men's 18cm (approx.) 2-in-1 Versatile Shorts
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            {/* WOMENS SECTION */}
+            <div className="flex flex-col items-end w-1/2 sm:w-[95vw]">
+              <div className="flex h-auto items-center gap-3 pr-[48px]">
+                <h3 className="font-medium">Shop Women's</h3>
+                <button className="flex justify-center items-center bg-gray-200 rounded-full w-12 h-12 hover:bg-gray-300 sm:hidden">
+                  <Image
+                    src={leftArrow}
+                    className="rotate-180 "
+                    alt="left arrow"
+                  />
+                </button>
+                <button className="flex justify-center items-center bg-gray-200 rounded-full w-12 h-12 hover:bg-gray-300 sm:hidden">
+                  <Image src={leftArrow} alt="left arrow" />
+                </button>
+              </div>
+
+              <div className="flex gap-3 pt-3 sm:flex-col sm:w-[95vw] sm:items-center">
+                <div className="flex flex-col max-w-[300px] w-1/2 sm:w-[95vw]">
+                  <Image src={women1} alt="women 1" />
+                  <div className="flex justify-between ">
+                    <h3 className="font-medium text-wrap ">
+                      Nike Dri-FIT ADV Run Division
+                    </h3>
+                    <h3 className="font-medium">₹&nbsp;5,295</h3>
+                  </div>
+                  <h3 className="font-normal text-gray-500 text-wrap  w-[200px]">
+                    Women's Long-Sleeve Running Top
+                  </h3>
+                </div>
+                <div className="flex flex-col max-w-[300px] w-1/2 sm:w-[95vw]">
+                  <Image src={women2} alt="men1" />
+                  <div className="flex justify-between ">
+                    <h3 className="font-medium text-wrap">Nike Fast</h3>
+                    <h3 className="font-medium">₹&nbsp;3,795</h3>
+                  </div>
+                  <h3 className="font-normal text-gray-500 text-wrap w-[200px]">
+                    Women's Mid-Rise 7/8 Running Leggings with Pockets
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* BANNER 2 */}
+        <div className="flex flex-col mt-[84px] max-w-[1440px] w-[calc(100vw-96px)] h-auto sm:w-[90vw]">
+          <h3 className="font-medium text-2xl">Featured</h3>
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+            className="w-full pt-[25px]"
+            src={dontmiss}
+            alt="featured image"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <div className="flex flex-col pt-[48px] items-center">
+            <h1 className="text-5xl font-medium sm:text-center">
+              FLIGHT ESSENTIALS
+            </h1>
+            <h2 className="text-base pt-6 sm:text-center">
+              Your built-to-last, all-week wears—but with style only Jordan
+              Brand can deliver.
+            </h2>
+            <Link href={'/all-products'}>
+              <button className="bg-black text-white h-10 w-[80px] rounded-[30px] mt-[30px]">
+                Shop
+              </button>
+            </Link>
+          </div>
+        </div>
+
+        {/* CATEGORIES */}
+
+        <div className="flex flex-col mt-[84px] max-w-[1440px] w-[calc(100vw-96px)] h-auto">
+          <h3 className="font-medium text-2xl">The Essentials</h3>
+          <div className="flex gap-3 sm:flex-col sm:items-center">
+            <div className="w-1/3 h-auto sm:w-[95vw]">
+              <Image src={essential1} alt="essential 1" />
+              <div className="flex items-center relative bottom-24 left-12 h-[40px] w-min pl-3 pr-3 bg-white rounded-[30px] ">
+                <h3 className="font-medium">Men's</h3>
+              </div>
+            </div>
+            <div className="w-1/3 h-auto  sm:w-[95vw]">
+              <Image src={essential2} alt="essential 2" />
+              <div className="flex items-center relative bottom-24 left-12 h-[40px] w-min pl-3 pr-3 bg-white rounded-[30px] ">
+                <h3 className="font-medium">Women's</h3>
+              </div>
+            </div>
+            <div className="w-1/3 h-auto  sm:w-[95vw]">
+              <Image src={essential3} alt="essential 3" />
+              <div className="flex items-center relative bottom-24 left-12 h-[40px] w-min pl-3 pr-3 bg-white rounded-[30px] ">
+                <h3 className="font-medium">Kids'</h3>
+              </div>
+            </div>
+          </div>
+          <div className="flex w-full justify-center">
+            <div className="flex gap-3 w-[880px] h-[300px] sm:w-[95vw] sm:items-center sm:h-auto sm:flex-wrap">
+              <div className="w-1/4 h-[300px] sm:w-1/2">
+                <h1 className="font-medium pb-4">Icons</h1>
+                <ul className="flex flex-col gap-4 text-gray-500 font-medium">
+                <Link href={'/all-products'}><li>Air Force 1</li></Link>
+                <Link href={'/all-products'}><li>Huarache</li></Link>
+                <Link href={'/all-products'}><li>Air Max 90</li></Link>
+                <Link href={'/all-products'}><li>Air Max 95</li></Link>
+                </ul>
+              </div>
+
+              <div className="w-1/4 h-[300px] sm:w-1/2">
+                <h1 className="font-medium pb-4">Shoes</h1>
+                <ul className="flex flex-col gap-4 text-gray-500 font-medium">
+                <Link href={'/all-products'}><li>All Shoes</li></Link>
+                <Link href={'/all-products'}><li>Custom Shoes</li></Link>
+                <Link href={'/all-products'}><li>Jordan Shoes</li></Link>
+                <Link href={'/all-products'}><li>Running Shoes</li></Link>
+                </ul>
+              </div>
+
+              <div className="w-1/4 h-[300px]  sm:w-1/2">
+                <h1 className="font-medium pb-4">Clothing</h1>
+                <ul className="flex flex-col gap-4 text-gray-500 font-medium">
+                <Link href={'/all-products'}><li>All Clothing</li></Link>
+                <Link href={'/all-products'}><li>Modest Wear</li></Link>
+                <Link href={'/all-products'}><li>Hoodies & Pullovers</li></Link>
+                <Link href={'/all-products'}><li>Shirts & Tops</li></Link>
+                </ul>
+              </div>
+
+              <div className="w-1/4 h-[300px]  sm:w-1/2">
+                <h1 className="font-medium pb-4">Kids'</h1>
+                <ul className="flex flex-col gap-4 text-gray-500 font-medium">
+                <Link href={'/all-products'}><li>Infant & Toddler Shoes</li></Link>
+                <Link href={'/all-products'}><li>Kids' Shoes</li></Link>
+                <Link href={'/all-products'}><li>Kids' Jordan Shoes</li></Link>
+                <Link href={'/all-products'}><li>Kids' Basketball Shoes</li></Link>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

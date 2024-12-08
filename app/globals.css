@@ -3,19 +3,79 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #fff;
+  ;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: var(--font-metro);
 }
+
+.list::after{
+  content: "|";
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 12px;
+}
+
+.twitter:hover{
+  filter: invert(53%) sepia(45%) saturate(876%) hue-rotate(161deg) brightness(91%) contrast(102%);
+}
+
+.youtube:hover{
+  filter: invert(29%) sepia(90%) saturate(6977%) hue-rotate(0deg) brightness(103%) contrast(134%);
+}
+
+.facebook:hover{
+  filter: invert(28%) sepia(33%) saturate(1144%) hue-rotate(185deg) brightness(98%) contrast(87%);
+}
+
+.instagram:hover{
+  filter: invert(38%) sepia(41%) saturate(1853%) hue-rotate(313deg) brightness(88%) contrast(92%);
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 20px;
+  background: #f1f1f1; 
+}
+
+/* Track */
+.scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.product:hover .productTitle{
+  text-decoration: underline;
+}
+
+.product{
+  cursor: pointer;
+}
+
+@media (max-width: 648px) {
+  .list::after{
+    content: "|";
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 12px;
+  }
+  
+}
+
