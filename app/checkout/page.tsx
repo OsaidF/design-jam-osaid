@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import deliver from "@/public/deliver.png";
+import data from '@/app/data/products'
 
 const Page = () => {
   return (
@@ -139,6 +140,27 @@ const Page = () => {
                 <div className="flex justify-between w-full border-2 border-gray-200">
                     <h3 className="pt-2 pb-2 font-medium">Total</h3>
                     <h3 className="pt-2 pb-2 font-medium">₹&nbsp;20,000</h3>
+                </div>
+                <h3 className="font-medium text-sm text-center">(The total reflects the price of your order, including all duties and taxes)</h3>
+
+                <h1 className="font-medium text-lg pt-3 pb-3">Arrives Mon 27, Mar - Wed 12, April</h1>
+                <div className="flex items-center">
+                    <Image src={data[5].img} alt="image" className="w-[200px] h-auto" />
+                    <div >
+                        <h2>{data[5].name}</h2><br/>
+                        <h2 className="text-gray-500">{data[5].subTitle}</h2>
+                        <h2 className="text-gray-500">₹&nbsp;{data[5].price}</h2>
+
+                    </div>
+                </div>
+                <div className="flex items-center">
+                    <Image src={data[6].img} alt="image" className="w-[200px] h-auto" />
+                    <div>
+                        <h2>{data[6].name}</h2><br/>
+                        <h2 className="text-gray-500">{data[6].subTitle}</h2>
+                        <h2 className="text-gray-500">₹&nbsp;{data[6].price}</h2>
+
+                    </div>
                 </div>
                 
           </div>
