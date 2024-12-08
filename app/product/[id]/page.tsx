@@ -2,6 +2,7 @@ import React from "react";
 import products from "@/app/data/products";
 import Image from "next/image";
 import cart from '@/public/product/cartproduct.png'
+import Link from "next/link";
 
 async function Page({ params }: { params: Promise<{ id: string }> }) {
   const id = (await params).id;
@@ -31,10 +32,12 @@ async function Page({ params }: { params: Promise<{ id: string }> }) {
                 </p>
 
                 <h1 className="text-4xl font-medium pt-[32px] pb-[24px]">₹&nbsp;{result[0].price}</h1>
-                <button className="flex gap-3 bg-zinc-950 text-white pl-5 pr-5 pt-2 pb-2 rounded-[30px] hover:bg-zinc-800"
-                >
-                <Image src={cart} alt="cart" />
-                Add To Cart</button>
+                <Link href={"/cart"}>
+                  <button className="flex gap-3 bg-zinc-950 text-white pl-5 pr-5 pt-2 pb-2 rounded-[30px] hover:bg-zinc-800"
+                  >
+                  <Image src={cart} alt="cart" />
+                  Add To Cart</button>
+                </Link>
           </div>
         </div>
       </div>

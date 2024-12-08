@@ -3,6 +3,7 @@ import React from 'react'
 import product from '@/app/data/products'
 import heart from '@/public/cart/heart.png'
 import bin from '@/public/cart/bin.png'
+import Link from 'next/link'
 
 const Page = () => {
   return (
@@ -64,7 +65,9 @@ const Page = () => {
                     <h3 className='pt-6 font-medium'>Total</h3>
                     <h3 className='pt-6 font-medium'>₹ 23,000</h3>
                 </div>
-                <button className='bg-black text-white rounded-[30px] p-2 mt-6'>Member Checkout</button>
+                <Link href={'/checkout'} className='w-full'>
+                    <button className='bg-black text-white rounded-[30px] p-2 mt-6'>Member Checkout</button>
+                </Link>
             </div>
         </div>
     </div>
