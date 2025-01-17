@@ -13,33 +13,33 @@ const Footer = () => {
             <div className='flex w-3/5 pl-[34px] pt-10 sm:block'>
                 <div className='w-[250px] h-auto'>
                     <ul className='flex flex-col gap-[20px] text-white font-normal text-xs'>
-                        <li className='hover:text-white cursor-pointer'>FIND A STORE</li>
-                        <li className='hover:text-white cursor-pointer'>BECOME A MEMBER</li>
-                        <li className='hover:text-white cursor-pointer'>SIGN UP FOR EMAIL</li>
-                        <li className='hover:text-white cursor-pointer'>SEND US FEEDBACK</li>
-                        <li className='hover:text-white cursor-pointer'>STUDENT DISCOUNTS</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>FIND A STORE</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>BECOME A MEMBER</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>SIGN UP FOR EMAIL</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>SEND US FEEDBACK</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>STUDENT DISCOUNTS</li>
                     </ul>
                 </div>
 
                 <div className='w-[250px] h-auto'>
-                    <ul className='flex flex-col gap-[17px] text-gray-500 text-xs'>
+                    <ul className='flex flex-col gap-[17px] text-white text-xs'>
                         <li className='text-white font-normal'>GET HELP</li>
-                        <li className='hover:text-white cursor-pointer'>Order Status</li>
-                        <li className='hover:text-white cursor-pointer'>Delivery</li>
-                        <li className='hover:text-white cursor-pointer'>Returns</li>
-                        <li className='hover:text-white cursor-pointer'>Payment Options</li>
-                        <li className='hover:text-white cursor-pointer'>Contact Us On Nike.com Inquiries</li>
-                        <li className='hover:text-white cursor-pointer'>Contact Us On All Other Inquiries</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>Order Status</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>Delivery</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>Returns</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>Payment Options</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>Contact Us On Nike.com Inquiries</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>Contact Us On All Other Inquiries</li>
                     </ul>
                 </div>
 
                 <div className='w-[250px] h-auto'>
-                    <ul className='flex flex-col gap-[17px] text-gray-500 text-xs'>
+                    <ul className='flex flex-col gap-[17px] text-whitetext-xs'>
                         <li className='text-white font-normal'>ABOUT NIKE</li>
-                        <li className='hover:text-white cursor-pointer'>News</li>
-                        <li className='hover:text-white cursor-pointer'>Careers</li>
-                        <li className='hover:text-white cursor-pointer'>Investors</li>
-                        <li className='hover:text-white cursor-pointer'>Sustinability</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>News</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>Careers</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>Investors</li>
+                        <li className='hover:text-gray-500 cursor-pointer'>Sustinability</li>
                     </ul>
                 </div>
             </div>
@@ -65,7 +65,7 @@ const Footer = () => {
             <div className='flex gap-3 items-center h-[14px]'>
             <Image src={location} alt='location pin' />
             <h1 className='text-white text-xs'>India</h1>
-            <h3 className='text-gray-500 text-xs pl-3'>© 2023 Nike, Inc. All Rights Reserved</h3>
+            <h2 className='text-gray-500 text-xs pl-3'>© 2023 Nike, Inc. All Rights Reserved</h2>
             </div>
 
             <div>

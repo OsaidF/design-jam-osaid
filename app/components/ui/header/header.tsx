@@ -9,7 +9,7 @@ const Header = () => {
         <div className="flex h-16 bg-slate-100 w-full justify-center">
           <div className="flex flex-col justify-center items-center">
             <h1 className="font-medium">Hello Nike App</h1>
-            <h3 className="text-xs">Download the app to access everything Nike. <span className="underline font-medium">Get Your Great</span></h3>
+            <h2 className="text-xs">Download the app to access everything Nike. <span className="underline font-medium">Get Your Great</span></h2>
           </div>
           
       </div>

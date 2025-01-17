@@ -20,7 +20,7 @@ export default function Home() {
       <div className="flex w-full flex-col items-center sm:overflow-hidden">
         <div className="mt-[84px] w-full max-w-[1440px] h-auto">
           <div className="flex justify-between pl-12 pr-12 m-h-[52px] items-center">
-            <h3 className="font-medium text-xl">Best of Air Max</h3>
+            <h1 className="font-medium text-xl">Best of Air Max</h1>
             <div className="flex gap-3 items-center sm:hidden">
               <h4 className="font-medium cursor-pointer hover:underline">
                 Shop
@@ -229,40 +229,40 @@ export default function Home() {
               <div className="w-1/4 h-[300px] sm:w-1/2">
                 <h1 className="font-medium pb-4">Icons</h1>
                 <ul className="flex flex-col gap-4 text-gray-500 font-medium">
-                <Link href={'/all-products'}><li>Air Force 1</li></Link>
-                <Link href={'/all-products'}><li>Huarache</li></Link>
-                <Link href={'/all-products'}><li>Air Max 90</li></Link>
-                <Link href={'/all-products'}><li>Air Max 95</li></Link>
+                <li><Link href={'/all-products'}>Air Force 1</Link></li>
+                <li><Link href={'/all-products'}>Huarache</Link></li>
+                <li><Link href={'/all-products'}>Air Max 90</Link></li>
+                <li><Link href={'/all-products'}>Air Max 95</Link></li>
                 </ul>
               </div>
 
               <div className="w-1/4 h-[300px] sm:w-1/2">
                 <h1 className="font-medium pb-4">Shoes</h1>
                 <ul className="flex flex-col gap-4 text-gray-500 font-medium">
-                <Link href={'/all-products'}><li>All Shoes</li></Link>
-                <Link href={'/all-products'}><li>Custom Shoes</li></Link>
-                <Link href={'/all-products'}><li>Jordan Shoes</li></Link>
-                <Link href={'/all-products'}><li>Running Shoes</li></Link>
+                <li><Link href={'/all-products'}>All Shoes</Link></li>
+                <li><Link href={'/all-products'}>Custom Shoes</Link></li>
+                <li><Link href={'/all-products'}>Jordan Shoes</Link></li>
+                <li><Link href={'/all-products'}>Running Shoes</Link></li>
                 </ul>
               </div>
 
               <div className="w-1/4 h-[300px]  sm:w-1/2">
                 <h1 className="font-medium pb-4">Clothing</h1>
                 <ul className="flex flex-col gap-4 text-gray-500 font-medium">
-                <Link href={'/all-products'}><li>All Clothing</li></Link>
-                <Link href={'/all-products'}><li>Modest Wear</li></Link>
-                <Link href={'/all-products'}><li>Hoodies & Pullovers</li></Link>
-                <Link href={'/all-products'}><li>Shirts & Tops</li></Link>
+                <li><Link href={'/all-products'}>All Clothing</Link></li>
+                <li><Link href={'/all-products'}>Modest Wear</Link></li>
+                <li><Link href={'/all-products'}>Hoodies & Pullovers</Link></li>
+                <li><Link href={'/all-products'}>Shirts & Tops</Link></li>
                 </ul>
               </div>
 
               <div className="w-1/4 h-[300px]  sm:w-1/2">
                 <h1 className="font-medium pb-4">Kids'</h1>
                 <ul className="flex flex-col gap-4 text-gray-500 font-medium">
-                <Link href={'/all-products'}><li>Infant & Toddler Shoes</li></Link>
-                <Link href={'/all-products'}><li>Kids' Shoes</li></Link>
-                <Link href={'/all-products'}><li>Kids' Jordan Shoes</li></Link>
-                <Link href={'/all-products'}><li>Kids' Basketball Shoes</li></Link>
+                <li><Link href={'/all-products'}>Infant & Toddler Shoes</Link></li>
+                <li><Link href={'/all-products'}>Kids' Shoes</Link></li>
+                <li><Link href={'/all-products'}>Kids' Jordan Shoes</Link></li>
+                <li><Link href={'/all-products'}>Kids' Basketball Shoes</Link></li>
                 </ul>
               </div>
             </div>
