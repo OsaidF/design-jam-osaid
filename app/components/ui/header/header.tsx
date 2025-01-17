@@ -15,7 +15,7 @@ const Header = () => {
       </div>
       <div className='pt-2 flex w-full justify-center'>
             <div className="max-w-[1344px] ml-12 mr-12 bg-slate-200 w-[calc(100vw-96px)] sm:ml-3 sm:mr-3 sm:w-[95vw]">
-              <Image src={header} alt='header image' />
+              <Image src={header} alt='header image' priority />
             </div>
           </div>
           <div className='flex flex-col pt-12 items-center sm:pt-6'>

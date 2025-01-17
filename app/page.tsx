@@ -41,7 +41,7 @@ export default function Home() {
           <div className="flex w-full justify-center pt-3">
             <div className="flex max-w-[1440px] w-[calc(100vw-96px)] flex-wrap min-h-min sm:w-[95vw]">
               {airmaxData.map((i) => (
-                <Link href={`/product/${i.id}`} className="w-1/3 sm:w-[95vw]">
+                <Link href={`/product/${i.id}`} className="w-1/3 sm:w-[95vw]" key={i.id}>
                   <div className="flex flex-col justify-start items-center">
                     <div className="flex flex-col justify-center w-[95%]">
                       <Image src={i.img} alt="airmax" />

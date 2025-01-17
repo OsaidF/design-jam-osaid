@@ -8,7 +8,7 @@ import location from '@/public/footer/location.png'
 
 const Footer = () => {
   return (
-    <div className='flex flex-col w-full h-[330px] justify-center bg-black sm:h-auto'>
+    <div className='flex flex-col w-full h-[330px] justify-center bg-black sm:h-auto md:w-full'>
         <div className='flex w-full max-w-[1440px] sm:block'>
             <div className='flex w-3/5 pl-[34px] pt-10 sm:block'>
                 <div className='w-[250px] h-auto'>

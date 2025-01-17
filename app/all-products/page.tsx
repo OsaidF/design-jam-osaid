@@ -34,10 +34,11 @@ const index = () => {
         pl-[48px] pr-[48px] mt-10 bg-white drop-shadow-sm z-10 sm:pl-3 sm:pr-3'>
           <h1 className='font-medium text-2xl'>New ({filteredProducts.length})</h1>
           <div className='flex gap-4'>
-          <div className='flex gap-3 p-1 rounded-md cursor-pointer hover:bg-gray-200' onClick={() => setShowFilters(!showFilters)}>
+          <div className='flex gap-3 p-1 rounded-md cursor-pointer hover:bg-gray-200 sm:hidden md:hidden' onClick={() => setShowFilters(!showFilters)}>
             <h1 className='font-medium' >Hide Filters</h1>
             <Image src={filterImg} alt='filter' />
           </div>
+          
           <div className='flex gap-3 items-center p-1 rounded-md cursor-pointer hover:bg-gray-200'>
           <h1 className='font-medium'>Sort By</h1>
             <Image src={arrowDown} height={4} className='w-[14px] h-[14px]' alt='filter' />
@@ -45,10 +46,11 @@ const index = () => {
         </div>
         </div>
 
-        {/* SIDEBAR */}
-        <div className='flex w-full justify-center relative'>
-        <div className='h-[1000px] w-1/5 sticky overflow-scroll top-0 left-0 right-0 pl-[48px] pr-[48px] 
-        scrollbar sm:w-[95vw] sm:absolute sm:overflow-scroll sm:bg-white sm:top-[50px] sm:left-0'
+        
+        <div className='flex w-full justify-center relative md:w-[100vw]'>
+          {/* SIDEBAR */}
+        <div className='h-[1000px] w-1/5 sticky overflow-scroll top-0 left-0 right-0 pl-[48px] pr-[48px] scrollbar
+        sm:w-[0px] sm:hidden sm:overflow-hidden sm:p-[0px] md:w-[0px] md:p-[0px] md:overflow-hidden'
         style={{display: showFilters ? "block" : "none"}}>
             <div className='flex flex-col mt-12'>
                 <ul className='flex flex-col gap-[14px] text-sm font-medium'>
@@ -131,11 +133,11 @@ const index = () => {
         </div>
 
         {/* PRODUCTS */}
-        <div className='flex w-4/5 flex-wrap gap-3 pt-[25px] sm:w-[95vw] sm:justify-center'>
+        <div className='flex w-4/5 flex-wrap gap-3 pt-[25px] sm:w-[95vw] sm:justify-center md:w-[95vw] md:justify-center'>
         {filteredProducts.map((i) => (
           <Link href={`/product/${i.id}`} className='flex w-[32%] sm:w-[95vw]' key={i.id}>
           <div className='flex flex-col max-w-[350px] max-h-[500px] h-min hover:bg-gray-100 pb-3 
-          rounded-md product sm:max-w-[95vw]'>
+          rounded-md product sm:max-w-[95vw] sm:max-h-fit'>
             <Image src={i.img} alt='Product Image' />
             <div className='pl-3'>
               <h3 className='font-medium text-orange-700'>{i.promo}</h3>

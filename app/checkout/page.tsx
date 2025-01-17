@@ -7,9 +7,9 @@ const Page = () => {
   return (
     <div className="w-full">
       <div className="flex justify-center max-w-[1440px]">
-        <div className="flex w-[880px] sm:flex-col sm:items-center">
+        <div className="flex w-[880px] sm:flex-col sm:items-center md:flex-col md:items-center">
           <div className="w-1/2 sm:w-[95vw]">
-            <h1 className="font-medium">
+            <h1 className="font-medium ">
               How would you like to get your order?
             </h1>
             <p className="pt-3">
@@ -159,7 +159,6 @@ const Page = () => {
                         <h2>{data[6].name}</h2><br/>
                         <h2 className="text-gray-500">{data[6].subTitle}</h2>
                         <h2 className="text-gray-500">₹&nbsp;{data[6].price}</h2>
-
                     </div>
                 </div>
                 

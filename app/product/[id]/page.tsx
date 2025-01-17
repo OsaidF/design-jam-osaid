@@ -9,17 +9,17 @@ async function Page({ params }: { params: Promise<{ id: string }> }) {
 
   let result = products.filter((obj) => obj.id.toString() === id);
   return (
-    <div className="flex justify-center min-h-[100vh] w-full sm:min-h-auto">
-      <div className="flex w-full max-w-[1440px] mt-[48px] ml-[120px] mr-[120px] h-[900px] sm:flex-col sm:w-[95vw] sm:mt-1 sm:h-auto">
+    <div className="flex justify-center min-h-[100vh] w-full sm:min-h-fit md:min-h-fit">
+      <div className="flex w-full max-w-[1440px] mt-[48px] h-[900px] sm:flex-col sm:w-[95vw] sm:mt-1 sm:h-auto md:flex-col md:h-auto">
         <div className="flex w-1/2 min-w-[592px] height-auto  sm:min-w-[95vw]">
           <Image
             src={result[0].img}
             alt="Image"
-            className="w-[592px] h-[592px] sm:w-[95vw] sm:h-auto"
+            className="max-w-[592px] max-h-[592px]  sm:w-[95vw] sm:h-auto"
           />
         </div>
-        <div className="flex flex-col items-center w-1/2 pt-[30px]  sm:w-[95vw] sm:h-auto sm:pb-[30px]">
-            <div className="max-w-[350px]">
+        <div className="flex flex-col items-center w-1/2 pt-[30px]  sm:w-[95vw] sm:h-auto sm:pb-[30px] md:w-[95vw] md:pb-[30px]">
+            <div className="w-full pl-4">
                 <h1 className="text-5xl font-medium">{result[0].name}</h1>
                 <p className="pt-[34px]">
                 Turn style on its head with this crafted take on the Air Jordan 1
