@@ -2,8 +2,9 @@ import Image from "next/image";
 import React from "react";
 import deliver from "@/public/deliver.png";
 import data from '@/app/data/products'
+import { getUserByEmail } from "@/sanity/lib/client";
 
-const Page = () => {
+async function Page() {
   return (
     <div className="w-full">
       <div className="flex justify-center max-w-[1440px]">

@@ -36,10 +36,10 @@ const Footer = () => {
                 <div className='w-[250px] h-auto'>
                     <ul className='flex flex-col gap-[17px] text-whitetext-xs'>
                         <li className='text-white font-normal'>ABOUT NIKE</li>
-                        <li className='hover:text-gray-500 cursor-pointer'>News</li>
-                        <li className='hover:text-gray-500 cursor-pointer'>Careers</li>
-                        <li className='hover:text-gray-500 cursor-pointer'>Investors</li>
-                        <li className='hover:text-gray-500 cursor-pointer'>Sustinability</li>
+                        <li className='text-white hover:text-gray-500 cursor-pointer'>News</li>
+                        <li className='text-white hover:text-gray-500 cursor-pointer'>Careers</li>
+                        <li className='text-white hover:text-gray-500 cursor-pointer'>Investors</li>
+                        <li className='text-white hover:text-gray-500 cursor-pointer'>Sustinability</li>
                     </ul>
                 </div>
             </div>
@@ -69,11 +69,11 @@ const Footer = () => {
             </div>
 
             <div>
-                <ul className='flex items-center gap-3 text-gray-500 text-xs pl-3 sm:pt-3'>
-                    <li className='cursor-pointer hover:text-white'>Guides</li>
-                    <li className='cursor-pointer hover:text-white'>Terms of Sale</li>
-                    <li className='cursor-pointer hover:text-white'>Terms of Use</li>
-                    <li className='cursor-pointer hover:text-white'>Nike Privacy Policy</li>
+                <ul className='flex items-center gap-3 text-white text-xs pl-3 sm:pt-3'>
+                    <li className='cursor-pointer hover:text-gray-500'>Guides</li>
+                    <li className='cursor-pointer hover:text-gray-500'>Terms of Sale</li>
+                    <li className='cursor-pointer hover:text-gray-500'>Terms of Use</li>
+                    <li className='cursor-pointer hover:text-gray-500'>Nike Privacy Policy</li>
                 </ul>
             </div>
         </div>

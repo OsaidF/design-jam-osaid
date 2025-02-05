@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google';
 import "./globals.css";
-import Navbar from "./components/ui/navbar/navbar";
-import Footer from "./components/ui/footer/footer";
+import Providers from "./components/hooks/providers";
+import { CookiesProvider } from 'next-client-cookies/server';
 
 const inter = Inter({
   weight: ["400"],
@@ -22,13 +22,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} w-full`}
-      >
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <CookiesProvider>
+        <Providers>
+        <body
+          className={`${inter.variable} w-full`}
+        >
+          {children}
+        </body>
+        </Providers>
+      </CookiesProvider>
     </html>
   );
 }

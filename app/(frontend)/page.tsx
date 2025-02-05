@@ -1,4 +1,4 @@
-import Header from "./components/ui/header/header";
+import Header from "@/app/components/ui/header/header";
 import Image from "next/image";
 import leftArrow from "@/public/home/left-arrow.png";
 import airmaxData from "@/app/data/home/airmax";
