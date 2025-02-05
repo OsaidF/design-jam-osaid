@@ -30,27 +30,21 @@ const Page = () => {
             gender: gender,
             country: formData.get("country"),
             dateOfBirth: formData.get("dateOfBirth")
-          }).then( async function (response)
-          {console.log(response.status)
+          }
+        ).then( async function (response)
+          { 
             if(response.status == 201) {
-              const user = await getUserByEmail(response.data.email)
-                console.log(user[0])
                 const res = await signIn("credentials", {
                   email: response.data.email,
                   password: formData.get("password"),
-                  redirect: false,
-                  prefetch: false,
                 });
                 if (res?.error) {
                   setError(res.error as string);
                 }
                 if (res?.ok) return router.push("/");
               }
-
             }
           )
-          
-
         } catch (error) {
           console.log(error);
           if (error instanceof AxiosError) {
