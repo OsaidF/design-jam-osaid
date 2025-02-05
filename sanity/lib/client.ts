@@ -2,6 +2,7 @@ import { createClient } from 'next-sanity'
 
 import { apiVersion, dataset, projectId } from '../env'
 import { User } from '@/app/types/user'
+import { sanityFetch } from './live'
 
 export const client = createClient({
   projectId,
@@ -17,6 +18,9 @@ export async function createUser(user: User) {
 }
 
 export async function getUserByEmail(email: string) {
-  const result = await client.fetch(`*[_type == 'user' && email == $email]`, {email: email})
+  const result = await client.fetch(`*[_type == 'user' && email == $email]`,
+    {email: email}, 
+    {cache: "no-cache" , next: { revalidate: 0} })
   return result
 }
+

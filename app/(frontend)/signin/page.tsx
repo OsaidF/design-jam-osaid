@@ -25,10 +25,12 @@ function Page() {
       email: formData.get("email"),
       password: formData.get("password"),
       cache: "no-store",
+      revalidate: 0,
     });
 
     if (res?.error) {
       setError(res.error as string);
+      return
     }
 
     if (!res?.error) {

@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-import { createUser, getUserByEmail } from "@/sanity/lib/client";
+import { client, createUser, getUserByEmail } from "@/sanity/lib/client";
 import { User } from "@/app/types/user";
+import { sanityFetch } from "@/sanity/lib/live";
 
 
 export async function POST(request: Request) {
@@ -14,8 +15,12 @@ export async function POST(request: Request) {
         );
       }
 
-      const userFound = await getUserByEmail(email)
-  
+      const userFound = await client.fetch(`*[_type == 'user' && email match $email]`,
+          {email: email}, 
+          {cache: "no-cache" , next: { revalidate: 0} })
+
+      console.log(userFound)
+
       if (userFound.length !== 0) {
         return NextResponse.json(
           { message: "Email already exists"},
@@ -43,18 +48,11 @@ export async function POST(request: Request) {
   
       
     } catch (error) {
-        return NextResponse.error();
+        return NextResponse.json(
+          {message: 'Server Error'},
+          {status: 500}
+        );
       }
 }
   
   
-  export async function GET() {
-    try {
-      return NextResponse.json(
-        {message: 'GET request on signup'}
-      )
-    } catch (error) {
-      console.log(error)
-      return NextResponse.error();
-    }
-  }

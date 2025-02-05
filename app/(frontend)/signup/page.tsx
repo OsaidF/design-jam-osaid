@@ -30,13 +30,14 @@ const Page = () => {
             gender: gender,
             country: formData.get("country"),
             dateOfBirth: formData.get("dateOfBirth")
-          }
-        ).then( async function (response)
-          { 
+          }).then( async function (response)
+          {
             if(response.status == 201) {
                 const res = await signIn("credentials", {
                   email: response.data.email,
                   password: formData.get("password"),
+                  redirect: false,
+                  revalidate: 0,
                 });
                 if (res?.error) {
                   setError(res.error as string);
@@ -45,6 +46,8 @@ const Page = () => {
               }
             }
           )
+          
+
         } catch (error) {
           console.log(error);
           if (error instanceof AxiosError) {

@@ -15,7 +15,6 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-
           const userFound = await getUserByEmail(credentials!.email);
           console.log("User Found: ", userFound);
           if (userFound.length == 0) throw new Error("This email does not exist!");
