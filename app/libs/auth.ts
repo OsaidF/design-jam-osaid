@@ -44,6 +44,9 @@ export const authOptions: NextAuthOptions = {
       if (trigger === "update" && session?.email) {
         token.email = session.email;
       }
+      if (trigger === "update" && session?.favourites) {
+        token.favourites = session.favourites;
+      }
 
       if (user) {
         const u = user as unknown as any;
@@ -56,6 +59,7 @@ export const authOptions: NextAuthOptions = {
           gender: u.gender,
           country: u.country,
           email: u.email,
+          favourites: u.favourites
         };
       }
       return token;
@@ -72,6 +76,7 @@ export const authOptions: NextAuthOptions = {
           gender: token.gender,
           country: token.country,
           email: token.email,
+          favourites: token.favourites,
         },
       };
     },

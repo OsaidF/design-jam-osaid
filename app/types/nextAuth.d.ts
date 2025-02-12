@@ -13,6 +13,13 @@ declare module "next-auth" {
       coutry: string,
       email: string,
       dateOfBirth: string,
+      favourites: favourites[],
     }  & DefaultSession["user"]
   }
+}
+
+interface favourites {
+  _key?: string,
+  _ref: string,
+  _type: string
 }

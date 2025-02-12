@@ -1,7 +1,7 @@
 "use client";
 import { product } from "@/app/types/product";
 import React, { useState, useEffect } from "react";
-import ProductCard from "@/app/components/ui/productCard/ProductCard";
+import ProductCard from "@/app/components/ui/productCard/productCard";
 import arrowDown from "@/public/allproducts/arrowdown.png";
 import filterImg from '@/public/allproducts/filter.png'
 import Image from "next/image";
@@ -25,13 +25,10 @@ const ProductList = ({ products }: ProductListProps) => {
 
   const priceValues = {
     all: ["0", "999999"],
-    one: ["5000", "10000"],
-    two: ["10000", "15000"]
+    one: ["0", "5000"],
+    two: ["5000", "10000"],
+    three: ["5000", "10000"],
   }
-
- useEffect(() => {
-
-}, []);
 
   const filteredProducts = products.filter(
     (product) =>
@@ -42,8 +39,8 @@ const ProductList = ({ products }: ProductListProps) => {
 
   return (
     <>
-     <div className='flex bg--white/ h-[50px] sticky top-0 left-0 w-full justify-between items-center 
-        pl-[48px] pr-[48px] mt-10  drop-shadow-sm z-0 sm:pl-3 sm:pr-3'>
+     <div className='flex bg-slate-100 h-[50px] sticky top-0 left-0 w-full justify-between items-center 
+        pl-[48px] pr-[48px] mt-10  drop-shadow-sm z-10 sm:pl-3 sm:pr-3 sm:mt-2'>
           <h1 className='font-medium text-2xl'> New ({filteredProducts.length})</h1>
           <div className='flex gap-4'>
            <div className='flex gap-3 p-1 rounded-md cursor-pointer hover:bg-gray-200 sm:hidden md:hidden' onClick={() => setShowFilters(!showFilters)}>
@@ -57,7 +54,7 @@ const ProductList = ({ products }: ProductListProps) => {
           </div>
         </div>
         </div>
-      <div className="flex w-full justify-center relative md:w-[100vw]">
+      <div className="flex w-full justify-center relative md:w-[100vw] ">
         {/* SIDEBAR */}
         <div
           className="h-[1000px] w-1/5 sticky overflow-y-scroll top-0 left-0 right-0 pl-[48px] pr-[48px] scrollbar
@@ -209,25 +206,6 @@ const ProductList = ({ products }: ProductListProps) => {
 
             <div className="pt-[30px]">
               <div className="flex justify-between items-center">
-                <h1 className="font-medium">Kids'</h1>
-                <Image
-                  src={arrowDown}
-                  alt="arrow down"
-                  className="h-[14px] w-[14px]"
-                />
-              </div>
-              <div className="flex items-center gap-3 pt-1">
-                <input type="checkbox" />{" "}
-                <label className="font-normal text-sm">Boys</label>
-              </div>
-              <div className="flex items-center gap-3 pt-1">
-                <input type="checkbox" />{" "}
-                <label className="font-normal text-sm">Girls</label>
-              </div>
-            </div>
-
-            <div className="pt-[30px]">
-              <div className="flex justify-between items-center">
                 <h1 className="font-medium">Shop By Price</h1>
                 <Image
                   src={arrowDown}
@@ -235,6 +213,18 @@ const ProductList = ({ products }: ProductListProps) => {
                   className="h-[14px] w-[14px]"
                 />
               </div>
+
+              <div className="flex items-center gap-3 pt-1">
+                <input type="checkbox"
+                value={priceValues.all}
+                checked={JSON.stringify(priceFilter) == JSON.stringify(priceValues.all)}
+                onChange={() =>
+                  setPriceFilter(priceValues.all)
+                }
+                />
+                <label className="font-normal text-sm">All</label>
+              </div>
+
               <div className="flex items-center gap-3 pt-1">
                 <input type="checkbox"
                 value={priceValues.one}
@@ -243,7 +233,7 @@ const ProductList = ({ products }: ProductListProps) => {
                   setPriceFilter(priceValues.one)
                 }
                 />
-                <label className="font-normal text-sm">₹&nbsp;5,000 to ₹&nbsp;10,000</label>
+                <label className="font-normal text-sm">₹&nbsp;00 to ₹&nbsp;5,000</label>
               </div>
 
               <div className="flex items-center gap-3 pt-1">
@@ -254,13 +244,24 @@ const ProductList = ({ products }: ProductListProps) => {
                   setPriceFilter(priceValues.two)
                 }
                 />
-                <label className="font-normal text-sm">₹&nbsp;10,000 to ₹&nbsp;15,000</label>
+                <label className="font-normal text-sm">₹&nbsp;5,000 to ₹&nbsp;10,000</label>
+              </div>
+
+              <div className="flex items-center gap-3 pt-1">
+                <input type="checkbox"
+                value={priceValues.three}
+                checked={JSON.stringify(priceFilter) == JSON.stringify(priceValues.three)}
+                onChange={() =>
+                  setPriceFilter(priceValues.three)
+                }
+                />
+                <label className="font-normal text-sm">₹&nbsp;5,000 to ₹&nbsp;10,000</label>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="flex w-4/5 flex-wrap gap-3 pt-[25px] sm:w-[95vw] sm:justify-center md:w-[95vw] md:justify-center">
+        <div className="flex w-4/5 flex-wrap gap-3 pt-[25px] pb-[30px] sm:w-[100vw] sm:justify-center md:w-[95vw] md:justify-center">
           {filteredProducts.map((i: any) => (
             <ProductCard product={i} key={i._id} />
           ))}

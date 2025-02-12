@@ -41,17 +41,10 @@ let Review = (review: reviews) => {
     <>
       {review && (
         <div
-          className="flex justify-between w-[400px] relative mt-2 cursor-pointer group"
+          className="flex w-[400px] relative mt-2 cursor-pointer group"
           onClick={toggleModal}
         >
-          <div>
-            <h1 className="font-semibold text-lg pl-2 group-hover:underline">
-              ({review.reviews ? review.reviews.length : 0})&nbsp;
-              {review.reviews && review.reviews.length < 0
-                ? "Reviews"
-                : "Review"}
-            </h1>
-          </div>
+          
 
 
           <div className="flex">
@@ -63,7 +56,7 @@ let Review = (review: reviews) => {
               />
             ))}
           </div>
-          <div className="absolute flex left-[4px]">
+          <div className="absolute flex">
             {Array.from({ length: Number(stars[0]) }, () => (
               <Star fill="black" strokeWidth={0} key={Math.random()} />
             ))}
@@ -78,7 +71,14 @@ let Review = (review: reviews) => {
               <Star fill="black" strokeWidth={0} className="w-[24px]" />
             </div>
           </div>
-          
+          <div>
+            <h1 className="font-semibold text-lg pl-2 group-hover:underline">
+              ({review.reviews ? review.reviews.length : 0})&nbsp;
+              {review.reviews && review.reviews.length > 0
+                ? "Reviews"
+                : "Review"}
+            </h1>
+          </div>
         </div>
       )}
       {showModal && (
@@ -102,7 +102,6 @@ interface modal {
 
 const ReviewModal = ({ onRequestClose, show, review }: modal) => {
   let { reviews } = review;
-  console.log(reviews);
   return (
     <div
       id="default-modal"
@@ -146,7 +145,7 @@ const ReviewModal = ({ onRequestClose, show, review }: modal) => {
                         />
                       ))}
                     </div>
-                    <div className="absolute flex top-0">
+                    <div className="absolute flex">
                       {Array.from({ length: i.rating }, () => (
                         <Star
                           fill="black"

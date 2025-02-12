@@ -28,7 +28,7 @@ export default function Page(){
             <span className="underline pl-3">Read More</span>
           </h3>
           <h1 className="text-2xl font-medium pt-5">Bag</h1>
-          <div className="flex flex-col sm:items-center sm:w-full md:w-full overflow-scroll scrollbar">
+          <div className="flex flex-col sm:items-center sm:w-full md:w-full overflow-scroll scrollbar sm:overflow-hidden">
             {items && (
               <>
                 {items.map((i) => (

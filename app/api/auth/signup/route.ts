@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-import { client, createUser, getUserByEmail } from "@/sanity/lib/client";
+import { client, createUser } from "@/sanity/lib/client";
 import { User } from "@/app/types/user";
-import { sanityFetch } from "@/sanity/lib/live";
 
 
 export async function POST(request: Request) {

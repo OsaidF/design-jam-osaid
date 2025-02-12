@@ -17,13 +17,14 @@ return (
     >
       <div
         className="flex flex-col max-w-[350px] max-h-[500px] h-min hover:bg-gray-100 pb-3 
-          rounded-md product sm:max-w-[95vw] sm:max-h-fit"
+          rounded-md product sm:max-w-[95vw] sm:max-h-fit overflow-hidden"
       >
         <Image
-          src={urlFor(product.image).width(323).height(323).url()}
+          src={urlFor(product.image).width(500).height(500).url()}
           width={323}
           height={323}
           alt="Product Image"
+          className="sm:w-[95vw] h-auto"
         />
         <div className="pl-3">
           <h3 className="font-medium text-orange-700">{product.status}</h3>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { defineQuery } from 'next-sanity'
-import ProductList from '@/app/components/ui/productsList/ProductList'
+import ProductList from '@/app/components/ui/productList/productList'
 import { client } from '@/sanity/lib/client'
 import type { Metadata } from "next";
 
