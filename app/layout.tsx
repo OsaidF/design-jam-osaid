@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import "./globals.css";
 import Providers from "./components/hooks/providers";
 import { CookiesProvider } from 'next-client-cookies/server';
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({
   weight: ["400"],
@@ -28,6 +29,7 @@ export default function RootLayout({
           className={`${inter.variable} w-full`}
         >
           {children}
+        <Analytics/>
         </body>
         </Providers>
       </CookiesProvider>
