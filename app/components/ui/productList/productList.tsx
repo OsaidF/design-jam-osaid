@@ -1,7 +1,7 @@
 "use client";
 import { product } from "@/app/types/product";
 import React, { useState, useEffect } from "react";
-import {ProductCard} from "@/app/components/ui/productCard/productCard";
+import ProductCard from "@/app/components/ui/productCard/ProductCard";
 import arrowDown from "@/public/allproducts/arrowdown.png";
 import filterImg from '@/public/allproducts/filter.png'
 import Image from "next/image";

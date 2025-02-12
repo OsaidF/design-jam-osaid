@@ -8,7 +8,7 @@ interface props {
   product: product;
 }
 
-export const ProductCard: FC<props> = ({ product }) => {
+const ProductCard: FC<props> = ({ product }) => {
 return (
     <Link
       href={`/all-products/${product._id}`}
@@ -51,3 +51,4 @@ return (
     </Link>
   );
 };
+export default ProductCard

@@ -3,7 +3,7 @@ import Favourites from "@/app/libs/favourites";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import {ProductCard} from "@/app/components/ui/productCard/productCard";
+import ProductCard from "@/app/components/ui/productCard/ProductCard";
 
 export default function page() {
   let [favourites, setFavourites] = useState<any>([]);
