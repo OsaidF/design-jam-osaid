@@ -12,7 +12,6 @@ import frontPage from "@/app/libs/frontpage";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
-import { toast } from "sonner";
 
 export function CarouselAirmax() {
   let [airmax, setAirmax] = React.useState<product[] | never[]>([]);
@@ -145,7 +144,6 @@ export function CarouselGender() {
             </>}
         </div>
       )}
-      <button onClick={() => toast("I got a glock in my rari")}>toast</button>
       </div>
 
       {/* WOMENS SECTION */}
