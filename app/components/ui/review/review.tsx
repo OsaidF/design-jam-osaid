@@ -36,7 +36,7 @@ let Review = (review: reviews) => {
     setShowModal(!showModal);
   };
 
-  console.log(review);
+  // console.log(review);
   return (
     <>
       {review && (

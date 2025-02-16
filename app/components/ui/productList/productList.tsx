@@ -57,7 +57,7 @@ const ProductList = ({ products }: ProductListProps) => {
       <div className="flex w-full justify-center relative md:w-[100vw] ">
         {/* SIDEBAR */}
         <div
-          className="h-[1000px] w-1/5 sticky overflow-y-scroll top-0 left-0 right-0 pl-[48px] pr-[48px] scrollbar
+          className="animate-in slide-in-from-left-96 h-[1000px] w-1/5 sticky overflow-y-scroll top-0 left-0 right-0 pl-[48px] pr-[48px] scrollbar
         sm:w-[0px] sm:hidden sm:overflow-hidden sm:p-[0px] md:w-[0px] md:p-[0px] md:overflow-hidden"
           style={{ display: showFilters ? "block" : "none" }}
         >

@@ -52,6 +52,14 @@ export async function addFavourites(_ref: string, _type: string, UserID: string)
   return result
 }
 
+export async function removeFavourites(_key: string, UserID: string){
+  let favouritesToRemove = [`favourites[_key=="${_key}"]`]
+  const result = await client.patch(UserID)
+  .unset(favouritesToRemove)
+  .commit()
+  return 'Item has been deleted'
+}
+
 
 export async function getFrontPage() {
   const result = await client.fetch(`*[_type == "frontpage"]{

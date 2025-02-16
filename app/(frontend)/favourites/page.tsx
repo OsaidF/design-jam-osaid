@@ -40,7 +40,7 @@ export default function page() {
         {status == "authenticated" && (
           <div>
             <div className="flex w-[1000px] flex-wrap gap-3 pt-[25px] sm:w-[95vw] sm:justify-center md:w-[95vw] md:justify-center">
-              {favourites ? (
+              {favourites.length > 0 ? (
                 favourites.map((i: any) => (
                   <ProductCard product={i} key={Math.random()} />
                 ))

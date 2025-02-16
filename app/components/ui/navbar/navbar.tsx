@@ -12,7 +12,7 @@ const Navbar = () => {
   const { countAllItems } = useCart();
   const cartItems = countAllItems();
   const { status, data: session } = useSession();
-  console.log(session);
+  
   const showSession = () => {
     if (status === "authenticated") {
       return (

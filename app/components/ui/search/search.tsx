@@ -68,7 +68,7 @@ const SearchModal = ({ onRequestClose, show }: modal) => {
     <div
       id="default-modal"
       tabIndex={1}
-      className="transition-all overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+      className="animate-in slide-in-from-right-96 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
     >
       <div className="relative w-full max-h-full z-10">
         <div className="relative bg-white w-full shadow sm:h-full">
